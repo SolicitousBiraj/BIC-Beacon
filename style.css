@@ -1,23 +1,38 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: #00124c;
+}
+
+/* Header Block */
+
+/* Navigation Bar */
 nav{
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+    background-color: #181a1b;
+    position: sticky;
+    border-radius: 10px;
 }
 .header{
-    min-height: 100vh;
+    min-height: 98.4vh;
     width: 100%;
-    background-image: linear-gradient(rgb(4,9,30,0.7),rgba(4,9,30,0.7)),url(image/Destinations-700x300.png);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/collegemodel.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
+    border-radius: 10px;
 }
 nav img{
-    width: 150px;
+    width: 175px;
 }
+
 .text-box{
     width: 90%;
-    color: #fff;
+    color: #e6e2de;
     position: absolute;
     top: 50%;
     left: 50%; 
@@ -30,8 +45,24 @@ nav img{
 .text-box p{
     margin: 10px 0 40px;
     font-size: 14px;
-    color: #fff;
+    color: #e6e2de;
 }
+.text-box {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.text-box h1 {
+    font-size: 3rem;
+    color: #e6e2de;
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    color: #e6e2de;
+    margin: 10px 0;
+}
+
 .nav-links{
     flex: 1;
     text-align: right;
@@ -43,9 +74,9 @@ nav img{
     position: relative;
 }
 .nav-links ul li a{
-    color: #fff;
+    color: #91aecc;
     text-decoration: none;
-    font-size: 13px; 
+    font-size: 15px; 
 }
 .nav-links ul li::after{
     content: '';
@@ -55,12 +86,14 @@ nav img{
     display: block;
     margin: auto;
 }
+
+/* Herobtn block */
 .hero-btn{
     display: inline-block;
     text-decoration: none;
-    columns: #fff;
-    color: #fff;
-    border: 1px solid #fff;
+    columns: #e6e2de;
+    color: #e6e2de;
+    border: 1px solid #e6e2de;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
@@ -76,39 +109,24 @@ nav .fa{
     display: none;
 }    
 
-
-.text-box {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.text-box h1 {
-    font-size: 3rem;
-    color: #333;
-}
-
-.text-box p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 10px 0;
-}
-
 .hero-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1rem;
-    color: #fff;
-    background-color: #007BFF;
+    color: #e6e2de;
+    background-color: #00124c;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .hero-btn:hover {
-    background-color: #0056b3;
+    background-color: #f44336;
 }
-.course {
+
+/* Feature block */
+.feature {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -116,23 +134,22 @@ nav .fa{
     text-align: center;
   }
   
-  .course h1 {
+  .feature h1 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #333;
+    color: #e6e2de;
   }
   
-  .course > p {
+  .feature > p {
     font-size: 0.9rem;
-    color: #777;
+    color: #e6e2de;
     font-weight: 500;
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto 50px;
     letter-spacing: 0.5px;
   }
-  
   .row {
     display: flex;
     justify-content: space-between;
@@ -140,31 +157,31 @@ nav .fa{
     gap: 30px;
   }
   
-  .course-col {
+  .feature-col {
     flex: 1;
     min-width: 250px;
-    background: #f9f9f9;
+    background: #e6e2de;
     border-radius: 10px;
     padding: 30px 25px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
   }
   
-  .course-col:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  .feature-col:hover {
+    box-shadow: 0 10px 30px #f44336;
     transform: translateY(-5px);
   }
   
-  .course-col h3 {
+  .feature-col h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #444;
+    color: #00124c;
     position: relative;
     padding-bottom: 15px;
   }
   
-  .course-col h3::after {
+  .feature-col h3::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -175,25 +192,79 @@ nav .fa{
     background: #f44336;
     border-radius: 3px;
   }
-  
-  .course-col p {
+
+  .feature-col p {
     font-size: 0.95rem;
-    color: #666;
+    color: #181a1b;
     line-height: 1.6;
+    word-break: break-word;
+    display: inline;
+  }
+
+  .feature-col p a:hover {
+    color: #f44336;
   }
   
-  /* Responsive design */
-  @media (max-width: 768px) {
+  /* Responsive Design */
+  @media (max-width: 700px) {
     .row {
       flex-direction: column;
     }
   
-    .course-col {
+    .feature-col {
       margin-bottom: 30px;
     }
   
-    .course h1 {
+    .feature h1 {
       font-size: 2rem;
+    }
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position:absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color:#e6e2de;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+
+    }
+    .nav-links ul{
+        padding: 30px;
     }
   }
   
+  /* Footer */
+  .footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons .fa{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color: #f44336;
+}
