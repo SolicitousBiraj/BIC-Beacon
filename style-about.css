@@ -1,0 +1,345 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+html, body {
+  background-image: linear-gradient(#181a1b,#00124c);
+  overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7% 2.5%;
+  background: rgba(24, 26, 27, 0.98);
+  top: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+  min-height: 48px;
+}
+
+nav img {
+  width: 200px;
+  height: auto;
+  transition: filter 0.3s;
+}
+
+nav img:hover {
+  filter: brightness(1.75);
+}
+
+.nav-links {
+  flex: 1;
+  text-align: left;
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links ul li {
+  position: relative;
+  padding: 0 4px;
+}
+
+.nav-links ul li a {
+  color: #e6e2de;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li.active a {
+  background: #f44336;
+  color: #e6e2de;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 4%;
+  }
+  .nav-links {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-links ul li {
+    padding: 10px 0;
+  }
+}
+
+.team-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.team-section h1 {
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(to bottom, #ffffff, #e6f0ff); 
+  border-radius: 20px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  color: #00214d; 
+}
+
+.card:hover {
+  transform: scale(1.15);
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  opacity: 0.85; 
+}
+
+.title {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #004080; 
+}
+
+.name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #001f3f;
+}
+
+.about-link {
+  color: #cc0000; 
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+  .footer {
+        background-color: #e6e2de;
+        color: #000000;
+        padding: 40px 0 0 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 30px;
+        transform: translateY(-20px);
+    }
+
+    .footer-contact,
+    .footer-links,
+    .footer-logo {
+        flex: 1 1 250px;
+        margin: 20px 0;
+    }
+
+    .footer-contact h4,
+    .footer-links h4 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #f44336;
+    }
+
+    .footer-contact ul,
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contact ul li,
+    .footer-links ul li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .footer-contact ul li a,
+    .footer-links ul li a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-contact ul li a:hover,
+    .footer-links ul li a:hover {
+        color: #f44336;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-logo img {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .footer-logo p {
+        font-size: 15px;
+        color: #000000;
+        margin-top: 10px;
+    }
+
+    .footer-bottom {
+        background: #01103a;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #bbb;
+        border-top: 1px solid #0e2a5a;
+    }
+
+    @media (max-width: 900px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .footer-contact,
+        .footer-links,
+        .footer-logo {
+            text-align: center;
+            margin: 15px 0;
+        }
+    }
+.icons .fa{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color: #f44336;
+}
+
+.wrapper{
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  transform: translate(-320px, 125px);
+}
+
+
+.wrapper .icon {
+  position: relative;
+  background: #f44336;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #e6e2de;
+  color: #e6e2de;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #e6e2de;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px #f44336;
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #e6e2de;
+}
+
+.wrapper .tiktok:hover,
+.wrapper .tiktok:hover .tooltip,
+.wrapper .tiktok:hover .tooltip::before {
+  background: #000000;
+  color: #e6e2de;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E1306C;
+  color: #e6e2de;
+} 
