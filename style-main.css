@@ -1,90 +1,130 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
-body{
+html, body {
   background-color: #00124c;
+  overflow-x: hidden;
+  border-radius: 10px;
 }
 
 /* Header Block */
 
 /* Navigation Bar */
-nav{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #181a1b;
-    position: sticky;
-    border-radius: 10px;
-}
-.header{
-    min-height: 98.4vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/collegemodel.jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    border-radius: 10px;
-}
-nav img{
-    width: 175px;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0.7% 2.5%;
+  background: rgba(24, 26, 27, 0.98);
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+  min-height: 48px;
 }
 
-.text-box{
-    width: 90%;
-    color: #e6e2de;
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%,-50%);
-    text-align: center;
+nav img {
+  width: 200px;
+  height: auto;
+  transition: filter 0.3s;
 }
-.text-box h1{
-    font-size: 62px;
+
+nav img:hover {
+  filter: brightness(1.2);
 }
-.text-box p{
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: #e6e2de;
+
+.nav-links {
+  flex: 1;
+  text-align: right;
 }
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links ul li {
+  position: relative;
+  padding: 0 4px;
+}
+
+.nav-links ul li a {
+  color: #e6e2de;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li.active a {
+  background: #f44336;
+  color: #e6e2de;
+  text-decoration: none;
+}
+
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 4%;
+  }
+  .nav-links {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-links ul li {
+    padding: 10px 0;
+  }
+}
+
+.header {
+  min-height: 87vh;
+  width: 100vw;
+  background-image: linear-gradient(#181a1bb7,#00124c), url(images/collegemodel.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 0 auto;
+  transform: none;
+  overflow: hidden;
+}
+
 .text-box {
-    text-align: center;
-    margin-top: 50px;
+  width: 90%;
+  color: #e6e2de;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-51.7%,-70%);
+  text-align: left;
+  margin-top: 50px;
 }
 
 .text-box h1 {
-    font-size: 3rem;
-    color: #e6e2de;
+  font-size: 3rem;
+  color: #e6e2de;
 }
 
 .text-box p {
-    font-size: 1.2rem;
-    color: #e6e2de;
-    margin: 10px 0;
-}
-
-.nav-links{
-    flex: 1;
-    text-align: right;
-}
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a{
-    color: #91aecc;
-    text-decoration: none;
-    font-size: 15px; 
-}
-.nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #f44336;
-    display: block;
-    margin: auto;
+  font-size: 1.2rem;
+  color: #e6e2de;
+  margin: 10px 0;
 }
 
 /* Herobtn block */
@@ -125,9 +165,14 @@ nav .fa{
     background-color: #f44336;
 }
 
+.fade-line-1 {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #fbfbfb 20%, #ffffff 80%, transparent);
+            margin: 20px 0;
+        }
 /* Feature block */
-.feature {
-    width: 100%;
+  .feature {
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
@@ -249,17 +294,101 @@ nav .fa{
   }
   
   /* Footer */
-  .footer{
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-    color: #e6e2de;
-}
-.footer h4{
-    margin-bottom: 25px;
-    margin-top: 20px;
-    font-weight: 600;
-}
+  .footer {
+        background-color: #e6e2de;
+        color: #000000;
+        padding: 40px 0 0 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 30px;
+        transform: translateY(-20px);
+    }
+
+    .footer-contact,
+    .footer-links,
+    .footer-logo {
+        flex: 1 1 250px;
+        margin: 20px 0;
+    }
+
+    .footer-contact h4,
+    .footer-links h4 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #f44336;
+    }
+
+    .footer-contact ul,
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contact ul li,
+    .footer-links ul li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .footer-contact ul li a,
+    .footer-links ul li a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-contact ul li a:hover,
+    .footer-links ul li a:hover {
+        color: #f44336;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-logo img {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .footer-logo p {
+        font-size: 15px;
+        color: #000000;
+        margin-top: 10px;
+    }
+
+    .footer-bottom {
+        background: #01103a;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #bbb;
+        border-top: 1px solid #0e2a5a;
+    }
+
+    @media (max-width: 900px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .footer-contact,
+        .footer-links,
+        .footer-logo {
+            text-align: center;
+            margin: 15px 0;
+        }
+    }
 .icons .fa{
     color: #f44336;
     margin: 0 13px;
@@ -270,7 +399,6 @@ nav .fa{
     color: #f44336;
 }
 
-/* Social Media Icons */
 .wrapper{
   display: inline-flex;
   list-style: none;
@@ -279,8 +407,9 @@ nav .fa{
   padding-top: 40px;
   font-family: "Poppins", sans-serif;
   justify-content: center;
-  transform: translate(-35px);
+  transform: translate(-320px, 125px);
 }
+
 
 .wrapper .icon {
   position: relative;
@@ -357,3 +486,6 @@ nav .fa{
   background: #E1306C;
   color: #e6e2de;
 }
+/* News Section */
+
+
