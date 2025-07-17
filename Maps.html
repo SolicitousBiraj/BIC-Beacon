@@ -3,29 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive Campus Map</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-</head>
-<link rel="icon" type="image/x-icon" href="/Codes/images/BIC-Logo.png">
+    <link rel="icon" type="image/x-icon" href="/Codes/images/BIC-Logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Assuming style-maps.css exists and contains general styling for nav/footer -->
+    <link rel="stylesheet" href="style-maps.css"> 
+    <style>
+        /* General body styling for better presentation */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light background for the page */
+            color: #333;
+        }
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-maps.css">
+        
+    </style>
+</head>
 <body>
     <nav>        
-            <a href="Main.html"><img src="images/logo.png"></a>
-            <div class="nav-links" id="navLinks">
-              <i class="fa fa-times" onclick="hideMenu()"></i> 
-                <ul>
-                    <li><a href="Main.html">HOME</a></li>
-                    <li><a href="Staff.html">STAFFS</a></li>
-                    <li><a href="Maps.html">MAPS</a></li>
-                    <li><a href="News.html">NEWS</a></li>
-                    <li><a href="About.html">ABOUT US</a></li>
-                </ul>
-            </div>       
-        </nav>
-        <!-- Footer -->
+        <a href="Main.html"><img src="images/logo.png" alt="Boston International College Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i> 
+            <ul>
+                <li><a href="Main.html">HOME</a></li>
+                <li><a href="Staff.html">STAFFS</a></li>
+                <li><a href="Maps.html">MAPS</a></li>
+                <li><a href="News.html">NEWS</a></li>
+                <li><a href="About.html">ABOUT US</a></li>
+            </ul>
+        </div>       
+    </nav>
+
+    <div class="map-container">
+        <!-- Map Divs - Updated data attributes for simpler JS -->
+        <div class="map-div" style="width: 226px; height: 197px; left: 0px; top: 434px;" data-title="Basketball Court" data-description="The vast open court perfect for many sports activities." data-details="Basketball and other many Sports tournament are held here, making it a versatile and convinient space.;">Basketball Court</div>
+        <div class="map-div" style="width: 65px; height: 86px; left: 140px; top: 672px;" data-title="BIC Startup" data-description="A cozy area for students to relax and socialize." data-details="Comfortable Seating;Charging Stations;Place for students to brainstorn ideas and ">BIC Startup</div>
+        <div class="map-div" style="width: 65px; height: 19px; left: 140px; top: 778px;" ></div>
+        <div class="map-div" style="width: 63px; height: 57px; left: 172px; top: 810px;" data-title="Admin Building" data-description="Where students can get administrative help." data-details="Fast Problem Solving Facilities; IT Support; ID card renewal/creation support;">Admin Building</div>
+        <div class="map-div" style="width: 77px; height: 86px; left: 305px; top: 672px;" data-title="Library" data-description="The central area of the college library." data-details="Extensive Book Collection;Study Tables">Library</div>
+        <div class="map-div" style="width: 77px; height: 45px; left: 420px; top: 295px;" data-title="Restroom" data-description="Equipped with modern computers for student use." data-details="High-Speed Internet;Printing Services">Restroom</div>
+        <div class="map-div" style="width: 153px; height: 86px; left: 539px; top: 254px;" data-title="BIC Hall" data-description="Entrance to the main college auditorium." data-details="Event Access">BIC Hall</div>
+        <div class="map-div" style="width: 153px; height: 86px; left: 910px; top: 99px;" ></div>
+        <div class="map-div" style="width: 153px; height: 185px; left: 825px; top: 0px;" >H.M. Block</div>
+        <div class="map-div" style="width: 153px; height: 186px; left: 539px; top: 29px;" data-title="Cafeteria" data-description="Where students and staff can grab a meal or a snack." data-details="Hot Meals;Snacks & Drinks;Seating Area">Cafeteria</div>
+        <div class="map-div" style="width: 53px; height: 116px; left: 725px; top: 546px;" data-title="Comp. Lab" data-description="Where students can access computers with internet access.">Comp. Lab</div>
+        <div class="map-div" style="width: 135px; height: 27px; left: 305px; top: 770px;" data-title="Reception Desk" data-description="Assistance for student queries and questions.">Reception Desk</div>
+        <div class="map-div" style="width: 77px; height: 12px; left: 305px; top: 649px;" ></div>
+        <div class="map-div" style="width: 65px; height: 99px; left: 240px; top: 434px;" data-title="Teacher's Lounge" data-description="A standard lounge for teachers to retreat to after classes.">Teacher's Lounge</div>
+        <div class="map-div" style="width: 271px; height: 50px; left: 400px; top: 434px;">Class Block 2</div>
+        <div class="map-div" style="width: 271px; height: 50px; left: 400px; top: 612px;">Class Block 1</div>
+        
+        <!-- Red background divs - Updated data attributes -->
+        <div class="map-div red-bg" style="width: 61px; height: 148px; left: 226px; top: 649px;" ></div>
+        <div class="map-div red-bg" style="width: 31px; height: 69px; left: 256px; top: 770px;" ></div>
+        <div class="map-div red-bg" style="width: 184px; height: 45px; left: 256px; top: 822px;" ></div>
+        <div class="map-div red-bg" style="width: 38px; height: 49px; left: 249px; top: 612px;" ></div>
+        <div class="map-div red-bg" style="width: 108px; height: 25px; left: 249px; top: 603px;" ></div>
+        <div class="map-div red-bg" style="width: 34px; height: 191px; left: 331px; top: 437px;" ></div>
+        <div class="map-div red-bg" style="width: 358px; height: 24px; left: 341px; top: 500px;" ></div>
+        <div class="map-div red-bg" style="width: 351px; height: 29px; left: 348px; top: 562px;" ></div>
+        <div class="map-div red-bg" style="width: 82px; height: 29px; left: 716px; top: 78px;" ></div>
+        <div class="map-div red-bg" style="width: 31px; height: 334px; left: 716px; top: 29px;" ></div>
+        <div class="map-div red-bg" style="width: 238px; height: 29px; left: 509px; top: 363px;" ></div>
+        <div class="map-div red-bg" style="width: 27px; height: 299px; left: 684px; top: 363px;" ></div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="infoModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close-btn" aria-label="Close information window">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <ul id="modalDetails"></ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
         <div class="footer-container">
             <div class="footer-contact">
@@ -52,51 +109,144 @@
                 <p>BIC Beacon - A light guiding freshers.</p>
             </div>
             <!-- Icons -->
-    <div class="icons">
-        <ul class="wrapper">
-            <a href=""><li class="icon facebook">
-            <span class="tooltip">Facebook</span>
-    <svg viewBox="0 0 320 512"
-         height="1.2em"
-         fill= "#ffffff"
-         xmlns="http://www.w3.org/2000/svg">
-      <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-      </path>
-    </svg>
-        </li></a>
-        <li class="icon tiktok">
-    <span class="tooltip">Tiktok</span>
-    <svg class="socialSvg tiktokSvg largeIcon" 
-         viewBox="0 0 48 48" version="1.1" 
-         xmlns="http://www.w3.org/2000/svg" 
-         xmlns:xlink="http://www.w3.org/1999/xlink" 
-         height="2em">
-      <g id="Icon/Social/tiktok-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z" id="Fill-1" fill="#FFFFFF"></path>
-      </g>
-    </svg>
-        </path>
-        </li>
-        <li class="icon instagram">
-    <span class="tooltip">Instagram</span>
-    <svg xmlns="http://www.w3.org/2000/svg"
-         height="1.2em"
-         fill="currentColor"
-         class="bi bi-instagram"
-         viewBox="0 0 16 16">
-      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-      </path>
-    </svg>
-        </li>
-    </ul>
-    </div>
+            <div class="icons">
+                <ul class="wrapper">
+                    <a href="https://www.facebook.com/BostonInternationalCollege/">
+                    <li class="icon facebook">
+                        <span class="tooltip">Facebook</span>
+                        <svg viewBox="0 0 320 512" height="1.2em" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                        </svg>
+                    </li></a>
+                    <a href="https://www.tiktok.com/@boston_int_college">
+                    <li class="icon tiktok">
+                        <span class="tooltip">Tiktok</span>
+                        <svg class="socialSvg tiktokSvg largeIcon" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="2em">
+                            <g id="Icon/Social/tiktok-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <path d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z" id="Fill-1" fill="#FFFFFF"></path>
+                            </g>
+                        </svg>
+                    </li>
+                    </a>
+                    <a href="http://https://www.instagram.com/bostoninternationalcollege/">
+                    <li class="icon instagram">
+                        <span class="tooltip">Instagram</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                        </svg>
+                    </li>
+                    </a>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Boston International College. All Rights Reserved.</p>
         </div>
     </div>
 
-    
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get references to important HTML elements
+            const mapDivs = document.querySelectorAll('.map-div');
+            const infoModal = document.getElementById('infoModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalDetails = document.getElementById('modalDetails');
+            const modalCloseBtn = document.querySelector('.modal-close-btn');
+
+            // Function to show the modal with information
+            function showModal(title, description, detailsArray) {
+                modalTitle.textContent = title; // Set the title
+                modalDescription.textContent = description; // Set the description
+                modalDetails.innerHTML = ''; // Clear any old details
+
+                // Check if there are details to show
+                if (detailsArray && detailsArray.length > 0) {
+                    // Loop through each detail and add it as a list item
+                    for (let i = 0; i < detailsArray.length; i++) {
+                        const detailItem = document.createElement('li');
+                        detailItem.textContent = detailsArray[i];
+                        modalDetails.appendChild(detailItem);
+                    }
+                } else {
+                    // If no details, show a default message
+                    const noDetailsItem = document.createElement('li');
+                    noDetailsItem.textContent = 'No specific details available.';
+                    modalDetails.appendChild(noDetailsItem);
+                }
+                
+                infoModal.classList.add('visible'); // Make the modal visible
+                infoModal.focus(); // Move keyboard focus to the modal for accessibility
+            }
+
+            // Function to hide the modal
+            function hideModal() {
+                infoModal.classList.remove('visible'); // Hide the modal
+            }
+
+            // Add click event listeners to each map div
+            for (let i = 0; i < mapDivs.length; i++) {
+                const div = mapDivs[i];
+                
+                // Make the div clickable and keyboard-focusable for accessibility
+                div.setAttribute('role', 'button');
+                div.setAttribute('tabindex', '0'); 
+
+                div.addEventListener('click', function() {
+                    // Get information directly from data attributes
+                    const title = this.dataset.title;
+                    const description = this.dataset.description;
+                    // Split the details string into an array using semicolon as a separator
+                    const details = this.dataset.details ? this.dataset.details.split(';') : [];
+                    
+                    showModal(title, description, details); // Show the modal
+                });
+
+                // Add keyboard support (Enter and Space keys)
+                div.addEventListener('keydown', function(event) {
+                    // Check if Enter or Space key was pressed
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault(); // Stop the browser's default action (like scrolling with spacebar)
+                        
+                        // Get information directly from data attributes
+                        const title = this.dataset.title;
+                        const description = this.dataset.description;
+                        const details = this.dataset.details ? this.dataset.details.split(';') : [];
+                        
+                        showModal(title, description, details); // Show the modal
+                    }
+                });
+            }
+
+            // Add event listener to the close button inside the modal
+            modalCloseBtn.addEventListener('click', hideModal);
+
+            // Close modal when clicking on the dark overlay area
+            infoModal.addEventListener('click', function(event) {
+                // Check if the click happened directly on the overlay, not on the modal content
+                if (event.target === infoModal) {
+                    hideModal();
+                }
+            });
+
+            // Close modal when the Escape key is pressed
+            document.addEventListener('keydown', function(event) {
+                // Check if Escape key was pressed AND the modal is currently visible
+                if (event.key === 'Escape' && infoModal.classList.contains('visible')) {
+                    hideModal();
+                }
+            });
+
+            // Placeholder for the navigation menu function (from original HTML)
+            // This function was mentioned in the original HTML but not defined.
+            // It's included here to prevent potential JavaScript errors if other parts of the page rely on it.
+            window.hideMenu = function() {
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks) {
+                    navLinks.style.right = '-200px'; // Example: hides the menu by moving it off-screen
+                }
+            };
+        });
+    </script>
 </body>
 </html>
