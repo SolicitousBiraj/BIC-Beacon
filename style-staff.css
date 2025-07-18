@@ -297,10 +297,10 @@ nav img:hover {
 }
 
         .header {
-            background: linear-gradient(135deg, #0061ff, #60efff);
             color: white;
             padding: 3rem 1rem;
             text-align: center;
+            min-height: fit-content;
         }
         
         .header h1 {

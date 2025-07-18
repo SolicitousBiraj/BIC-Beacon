@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Building - Boston International College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="/Codes/images/BIC-Logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-maps.css">
+    <style>
+        .location-detail {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .location-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .location-title {
+            color: #00124C;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .location-subtitle {
+            color: #f44336;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .location-description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        .location-features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #f44336;
+        }
+        .features-title {
+            color: #00124C;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+            font-size: 1.05em;
+        }
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f44336;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .back-button {
+            display: inline-block;
+            background: #f44336;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin-top: 30px;
+        }
+        .back-button:hover {
+            background: #d32f2f;
+            text-decoration: none;
+            color: white;
+        }
+        .location-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #00124C, #f44336);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .location-detail {
+                margin: 20px;
+                padding: 20px;
+            }
+            .location-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>        
+        <a href="Main.html"><img src="images/logo.png" alt="Boston International College Logo"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="Main.html">HOME</a></li>
+                <li><a href="Staff.html">STAFFS</a></li>
+                <li><a href="Maps.html">MAPS</a></li>
+                <li><a href="News.html">NEWS</a></li>
+                <li><a href="About.html">ABOUT US</a></li>
+            </ul>
+        </div>       
+    </nav>
+
+    <div class="location-detail">
+        <div class="location-header">
+            <h1 class="location-title">Admin Building</h1>
+            <p class="location-subtitle">Administrative Services Center</p>
+        </div>
+
+        <div class="location-image">
+            Administrative Services Hub
+        </div>
+
+        <div class="location-content">
+            <div>
+                <h2 style="color: #00124C; margin-bottom: 20px;">About This Location</h2>
+                <p class="location-description">
+                    Where students can get administrative help. The Admin Building serves as the central hub for all administrative services at Boston International College. This facility houses various departments that provide essential support services to students, faculty, and staff.
+                </p>
+                <p class="location-description">
+                    From enrollment and registration to student records and financial services, the Admin Building is your one-stop destination for all administrative needs. The building is designed to provide efficient and friendly service to the college community.
+                </p>
+            </div>
+
+            <div class="location-features">
+                <h3 class="features-title">Services Available</h3>
+                <ul class="features-list">
+                    <li>Fast problem solving facilities</li>
+                    <li>Comprehensive IT support services</li>
+                    <li>ID card renewal and creation support</li>
+                    <li>Student registration and enrollment</li>
+                    <li>Academic records management</li>
+                    <li>Financial aid and billing services</li>
+                    <li>Student information updates</li>
+                    <li>Document verification and certification</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-top: 30px;">
+            <h3 style="color: #00124C; margin-bottom: 15px;">Office Hours & Contact</h3>
+            <p style="color: #666; line-height: 1.6;">
+                The Admin Building operates during regular business hours to serve students and staff. Our dedicated administrative team is committed to providing quick and efficient solutions to all your academic and administrative needs. For urgent matters, emergency contact information is available at the reception desk.
+            </p>
+        </div>
+
+        <a href="maps.html" class="back-button">← Back to Campus Map</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><strong>PO BOX:</strong> 118</li>
+                    <li><strong>Address:</strong> Bharatpur-10, Hakim Chowk, Chitwan</li>
+                    <li><strong>Tel:</strong> <a href="tel:056598892">056-598892</a>, <a href="tel:056598992">056-598992</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:info@bostoncollege.edu.np">info@bostoncollege.edu.np</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Main.html">Home</a></li>
+                    <li><a href="Staff.html">Staffs</a></li>
+                    <li><a href="Maps.html">Maps</a></li>
+                    <li><a href="News.html">News</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="BIC Logo" style="width: 300px; margin-bottom:10px;">
+                <p>BIC Beacon - A light guiding freshers.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Boston International College. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

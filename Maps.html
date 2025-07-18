@@ -8,30 +8,76 @@
     <link rel="icon" type="image/x-icon" href="/Codes/images/BIC-Logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Assuming style-maps.css exists and contains general styling for nav/footer -->
     <link rel="stylesheet" href="style-maps.css"> 
     <style>
-        /* General body styling for better presentation */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5; /* Light background for the page */
+            background-color: #f0f2f5;
             color: #333;
         }
 
-        
+        /* Enhanced hover effects for clickable map divs */
+        .map-div[data-page]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .map-div[data-page] {
+            animation: subtle-pulse 3s infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% { 
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            }
+            50% { 
+                box-shadow: 0 4px 20px rgba(244, 67, 54, 0.2); 
+            }
+        }
+
+        .map-div[data-page]:focus {
+            outline: 3px solid #007bff;
+            outline-offset: 2px;
+            transform: scale(1.03);
+        }
+
+        /* Click indicator */
+        .map-div[data-page]::after {
+            content: "Click for details";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(244, 67, 54, 0.9);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .map-div[data-page]:hover::after {
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
     <nav>        
         <a href="Main.html"><img src="images/logo.png" alt="Boston International College Logo"></a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i> 
             <ul>
                 <li><a href="Main.html">HOME</a></li>
                 <li><a href="Staff.html">STAFFS</a></li>
-                <li><a href="Maps.html">MAPS</a></li>
+                <li class="active"><a href="Maps.html">MAPS</a></li>
                 <li><a href="News.html">NEWS</a></li>
                 <li><a href="About.html">ABOUT US</a></li>
             </ul>
@@ -39,47 +85,74 @@
     </nav>
 
     <div class="map-container">
-        <!-- Map Divs - Updated data attributes for simpler JS -->
-        <div class="map-div" style="width: 226px; height: 197px; left: 0px; top: 434px;" data-title="Basketball Court" data-description="The vast open court perfect for many sports activities." data-details="Basketball and other many Sports tournament are held here, making it a versatile and convinient space.;">Basketball Court</div>
-        <div class="map-div" style="width: 65px; height: 86px; left: 140px; top: 672px;" data-title="BIC Startup" data-description="A cozy area for students to relax and socialize." data-details="Comfortable Seating;Charging Stations;Place for students to brainstorn ideas and ">BIC Startup</div>
-        <div class="map-div" style="width: 65px; height: 19px; left: 140px; top: 778px;" ></div>
-        <div class="map-div" style="width: 63px; height: 57px; left: 172px; top: 810px;" data-title="Admin Building" data-description="Where students can get administrative help." data-details="Fast Problem Solving Facilities; IT Support; ID card renewal/creation support;">Admin Building</div>
-        <div class="map-div" style="width: 77px; height: 86px; left: 305px; top: 672px;" data-title="Library" data-description="The central area of the college library." data-details="Extensive Book Collection;Study Tables">Library</div>
-        <div class="map-div" style="width: 77px; height: 45px; left: 420px; top: 295px;" data-title="Restroom" data-description="Equipped with modern computers for student use." data-details="High-Speed Internet;Printing Services">Restroom</div>
-        <div class="map-div" style="width: 153px; height: 86px; left: 539px; top: 254px;" data-title="BIC Hall" data-description="Entrance to the main college auditorium." data-details="Event Access">BIC Hall</div>
-        <div class="map-div" style="width: 153px; height: 86px; left: 910px; top: 99px;" ></div>
-        <div class="map-div" style="width: 153px; height: 185px; left: 825px; top: 0px;" >H.M. Block</div>
-        <div class="map-div" style="width: 153px; height: 186px; left: 539px; top: 29px;" data-title="Cafeteria" data-description="Where students and staff can grab a meal or a snack." data-details="Hot Meals;Snacks & Drinks;Seating Area">Cafeteria</div>
-        <div class="map-div" style="width: 53px; height: 116px; left: 725px; top: 546px;" data-title="Comp. Lab" data-description="Where students can access computers with internet access.">Comp. Lab</div>
-        <div class="map-div" style="width: 135px; height: 27px; left: 305px; top: 770px;" data-title="Reception Desk" data-description="Assistance for student queries and questions.">Reception Desk</div>
-        <div class="map-div" style="width: 77px; height: 12px; left: 305px; top: 649px;" ></div>
-        <div class="map-div" style="width: 65px; height: 99px; left: 240px; top: 434px;" data-title="Teacher's Lounge" data-description="A standard lounge for teachers to retreat to after classes.">Teacher's Lounge</div>
+        <!-- Clickable Map Divs linking to individual pages -->
+        <a href="basketball-court.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 226px; height: 197px; left: 0px; top: 434px;" 
+                 data-page="basketball-court.html">Basketball Court</div>
+        </a>
+        
+        <a href="bic-startup.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 65px; height: 86px; left: 140px; top: 672px;" 
+                 data-page="bic-startup.html">BIC Startup</div>
+        </a>
+        
+        <div class="map-div" style="width: 65px; height: 19px; left: 140px; top: 778px;"></div>
+        
+        <a href="admin-building.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 63px; height: 57px; left: 172px; top: 810px;" 
+                 data-page="admin-building.html">Admin Building</div>
+        </a>
+        
+        <a href="library.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 77px; height: 86px; left: 305px; top: 672px;" 
+                 data-page="library.html">Library</div>
+        </a>
+        
+            <div class="map-div" style="width: 77px; height: 45px; left: 420px; top: 295px;" 
+                 data-page="restroom.html">Restroom</div>
+        
+            <div class="map-div" style="width: 153px; height: 86px; left: 539px; top: 254px;" 
+                 data-page="bic-hall.html">BIC Hall</div>
+        
+        <div class="map-div" style="width: 153px; height: 86px; left: 910px; top: 99px;"></div>
+        
+        <div class="map-div" style="width: 153px; height: 185px; left: 825px; top: 0px;">H.M. Block</div>
+        
+        <a href="cafeteria.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 153px; height: 186px; left: 539px; top: 29px;" 
+                 data-page="cafeteria.html">Cafeteria</div>
+        </a>
+        
+        <a href="comp-lab.html" style="text-decoration: none; color: inherit;">
+            <div class="map-div" style="width: 53px; height: 116px; left: 725px; top: 546px;" 
+                 data-page="comp-lab.html">Comp. Lab</div>
+        </a>
+        
+            <div class="map-div" style="width: 135px; height: 27px; left: 305px; top: 770px;" 
+                 data-page="reception-desk.html">Reception Desk</div>
+        
+        <div class="map-div" style="width: 77px; height: 12px; left: 305px; top: 649px;"></div>
+        
+            <div class="map-div" style="width: 65px; height: 99px; left: 240px; top: 434px;" 
+                 data-page="teachers-lounge.html">Teacher's Lounge</div>
+        
         <div class="map-div" style="width: 271px; height: 50px; left: 400px; top: 434px;">Class Block 2</div>
+        
         <div class="map-div" style="width: 271px; height: 50px; left: 400px; top: 612px;">Class Block 1</div>
         
-        <!-- Red background divs - Updated data attributes -->
-        <div class="map-div red-bg" style="width: 61px; height: 148px; left: 226px; top: 649px;" ></div>
-        <div class="map-div red-bg" style="width: 31px; height: 69px; left: 256px; top: 770px;" ></div>
-        <div class="map-div red-bg" style="width: 184px; height: 45px; left: 256px; top: 822px;" ></div>
-        <div class="map-div red-bg" style="width: 38px; height: 49px; left: 249px; top: 612px;" ></div>
-        <div class="map-div red-bg" style="width: 108px; height: 25px; left: 249px; top: 603px;" ></div>
-        <div class="map-div red-bg" style="width: 34px; height: 191px; left: 331px; top: 437px;" ></div>
-        <div class="map-div red-bg" style="width: 358px; height: 24px; left: 341px; top: 500px;" ></div>
-        <div class="map-div red-bg" style="width: 351px; height: 29px; left: 348px; top: 562px;" ></div>
-        <div class="map-div red-bg" style="width: 82px; height: 29px; left: 716px; top: 78px;" ></div>
-        <div class="map-div red-bg" style="width: 31px; height: 334px; left: 716px; top: 29px;" ></div>
-        <div class="map-div red-bg" style="width: 238px; height: 29px; left: 509px; top: 363px;" ></div>
-        <div class="map-div red-bg" style="width: 27px; height: 299px; left: 684px; top: 363px;" ></div>
-    </div>
-
-    <!-- Modal Structure -->
-    <div id="infoModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-            <button class="modal-close-btn" aria-label="Close information window">&times;</button>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <ul id="modalDetails"></ul>
-        </div>
+        <!-- Red background divs (non-clickable) -->
+        <div class="map-div red-bg" style="width: 61px; height: 148px; left: 226px; top: 649px;"></div>
+        <div class="map-div red-bg" style="width: 31px; height: 69px; left: 256px; top: 770px;"></div>
+        <div class="map-div red-bg" style="width: 184px; height: 45px; left: 256px; top: 822px;"></div>
+        <div class="map-div red-bg" style="width: 38px; height: 49px; left: 249px; top: 612px;"></div>
+        <div class="map-div red-bg" style="width: 108px; height: 25px; left: 249px; top: 603px;"></div>
+        <div class="map-div red-bg" style="width: 34px; height: 191px; left: 331px; top: 437px;"></div>
+        <div class="map-div red-bg" style="width: 358px; height: 24px; left: 341px; top: 500px;"></div>
+        <div class="map-div red-bg" style="width: 351px; height: 29px; left: 348px; top: 562px;"></div>
+        <div class="map-div red-bg" style="width: 82px; height: 29px; left: 716px; top: 78px;"></div>
+        <div class="map-div red-bg" style="width: 31px; height: 334px; left: 716px; top: 29px;"></div>
+        <div class="map-div red-bg" style="width: 238px; height: 29px; left: 509px; top: 363px;"></div>
+        <div class="map-div red-bg" style="width: 27px; height: 299px; left: 684px; top: 363px;"></div>
     </div>
 
     <!-- Footer -->
@@ -143,110 +216,5 @@
             <p>&copy; 2025 Boston International College. All Rights Reserved.</p>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get references to important HTML elements
-            const mapDivs = document.querySelectorAll('.map-div');
-            const infoModal = document.getElementById('infoModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalDetails = document.getElementById('modalDetails');
-            const modalCloseBtn = document.querySelector('.modal-close-btn');
-
-            // Function to show the modal with information
-            function showModal(title, description, detailsArray) {
-                modalTitle.textContent = title; // Set the title
-                modalDescription.textContent = description; // Set the description
-                modalDetails.innerHTML = ''; // Clear any old details
-
-                // Check if there are details to show
-                if (detailsArray && detailsArray.length > 0) {
-                    // Loop through each detail and add it as a list item
-                    for (let i = 0; i < detailsArray.length; i++) {
-                        const detailItem = document.createElement('li');
-                        detailItem.textContent = detailsArray[i];
-                        modalDetails.appendChild(detailItem);
-                    }
-                } else {
-                    // If no details, show a default message
-                    const noDetailsItem = document.createElement('li');
-                    noDetailsItem.textContent = 'No specific details available.';
-                    modalDetails.appendChild(noDetailsItem);
-                }
-                
-                infoModal.classList.add('visible'); // Make the modal visible
-                infoModal.focus(); // Move keyboard focus to the modal for accessibility
-            }
-
-            // Function to hide the modal
-            function hideModal() {
-                infoModal.classList.remove('visible'); // Hide the modal
-            }
-
-            // Add click event listeners to each map div
-            for (let i = 0; i < mapDivs.length; i++) {
-                const div = mapDivs[i];
-                
-                // Make the div clickable and keyboard-focusable for accessibility
-                div.setAttribute('role', 'button');
-                div.setAttribute('tabindex', '0'); 
-
-                div.addEventListener('click', function() {
-                    // Get information directly from data attributes
-                    const title = this.dataset.title;
-                    const description = this.dataset.description;
-                    // Split the details string into an array using semicolon as a separator
-                    const details = this.dataset.details ? this.dataset.details.split(';') : [];
-                    
-                    showModal(title, description, details); // Show the modal
-                });
-
-                // Add keyboard support (Enter and Space keys)
-                div.addEventListener('keydown', function(event) {
-                    // Check if Enter or Space key was pressed
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault(); // Stop the browser's default action (like scrolling with spacebar)
-                        
-                        // Get information directly from data attributes
-                        const title = this.dataset.title;
-                        const description = this.dataset.description;
-                        const details = this.dataset.details ? this.dataset.details.split(';') : [];
-                        
-                        showModal(title, description, details); // Show the modal
-                    }
-                });
-            }
-
-            // Add event listener to the close button inside the modal
-            modalCloseBtn.addEventListener('click', hideModal);
-
-            // Close modal when clicking on the dark overlay area
-            infoModal.addEventListener('click', function(event) {
-                // Check if the click happened directly on the overlay, not on the modal content
-                if (event.target === infoModal) {
-                    hideModal();
-                }
-            });
-
-            // Close modal when the Escape key is pressed
-            document.addEventListener('keydown', function(event) {
-                // Check if Escape key was pressed AND the modal is currently visible
-                if (event.key === 'Escape' && infoModal.classList.contains('visible')) {
-                    hideModal();
-                }
-            });
-
-            // Placeholder for the navigation menu function (from original HTML)
-            // This function was mentioned in the original HTML but not defined.
-            // It's included here to prevent potential JavaScript errors if other parts of the page rely on it.
-            window.hideMenu = function() {
-                const navLinks = document.getElementById('navLinks');
-                if (navLinks) {
-                    navLinks.style.right = '-200px'; // Example: hides the menu by moving it off-screen
-                }
-            };
-        });
-    </script>
 </body>
 </html>
