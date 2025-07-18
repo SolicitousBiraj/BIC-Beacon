@@ -177,6 +177,7 @@ nav .fa{
     margin: 0 auto;
     padding: 80px 20px;
     text-align: center;
+    text-decoration: none;  
   }
   
   .feature h1 {
@@ -184,6 +185,7 @@ nav .fa{
     font-weight: 600;
     margin-bottom: 10px;
     color: #e6e2de;
+    text-decoration: none;
   }
   
   .feature > p {
@@ -194,12 +196,14 @@ nav .fa{
     max-width: 800px;
     margin: 0 auto 50px;
     letter-spacing: 0.5px;
+    text-decoration: none;
   }
   .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
+    text-decoration: none;
   }
   
   .feature-col {
@@ -210,11 +214,13 @@ nav .fa{
     padding: 30px 25px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    text-decoration: none;
   }
   
   .feature-col:hover {
     box-shadow: 0 10px 30px #f44336;
     transform: translateY(-5px);
+    text-decoration: none;
   }
   
   .feature-col h3 {
@@ -224,6 +230,7 @@ nav .fa{
     color: #00124c;
     position: relative;
     padding-bottom: 15px;
+    text-decoration: none;
   }
   
   .feature-col h3::after {
@@ -236,6 +243,7 @@ nav .fa{
     height: 3px;
     background: #f44336;
     border-radius: 3px;
+    text-decoration: none;
   }
 
   .feature-col p {
@@ -244,11 +252,17 @@ nav .fa{
     line-height: 1.6;
     word-break: break-word;
     display: inline;
+    text-decoration: none;
   }
 
   .feature-col p a:hover {
     color: #f44336;
   }
+  .feature-col a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   
   /* Responsive Design */
   @media (max-width: 700px) {
